@@ -5,8 +5,8 @@ using UnityEngine;
 public class CamController : MonoBehaviour
 {
     public GameObject camBind;
-    public Transform camTransform;
-    private Transform pos;
+    public Vector3 offset;
+    public float focusSpeed = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +16,7 @@ public class CamController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pos = camBind.transform;
-        camTransform = pos;
+        transform.position = Vector3.Lerp(transform.position, camBind.transform.position + offset, Time.deltaTime * focusSpeed);
         
     }
 }

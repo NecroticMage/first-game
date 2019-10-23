@@ -17,6 +17,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*if(Input.mousePosition.x >= 10)
+        {
+            transform.rotation.y += 10;
+        }*/
+        //Debug.Log(Input.mousePosition.x);
         if(Input.GetKey("w"))
         {
             player.AddForce(0, 0, speed * forwardModify * Time.deltaTime);
